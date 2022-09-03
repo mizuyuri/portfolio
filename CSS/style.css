@@ -1,0 +1,627 @@
+@charset "UTF-8";
+
+/* リセット */
+html,
+body,
+header,
+footer,
+main,
+section,
+/* h1,
+h2,
+h3, */
+ul,
+li,
+p,
+dl,
+dt,
+dd {
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    font-family: "游ゴシック体", YuGothic, "游ゴシック", "Yu Gothic", sans-serif;
+    /* font-family: "A1 Mincho", "游明朝", YuMincho, "Hiragino Mincho ProN W3",
+        "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝",
+        "ＭＳ 明朝", serif; */
+    font-feature-settings: "palt";
+}
+
+a {
+    /*下線を消す*/
+    text-decoration: none;
+    /*色を消す*/
+    color: inherit;
+    transition: 0.3s;
+}
+
+a:hover {
+    opacity: 0.5;
+}
+
+ul {
+    /*左の「・」を消す*/
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    vertical-align: bottom;
+    border: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.br_sp {
+    display: none;
+}
+
+/* header */
+.header_wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    width: 100%;
+}
+
+.logo img {
+    width: 208px;
+    position: fixed;
+    top: 20px;
+    left: 80px;
+    z-index: 1;
+}
+
+nav {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: -300px;
+    bottom: 0;
+    width: 300px;
+    background: #ffffff;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    transition: all .5s;
+    z-index: 3;
+    opacity: 0;
+}
+
+.open nav {
+    left: 0;
+    opacity: 1;
+}
+
+nav .inner {
+    padding: 25px;
+}
+
+nav .inner ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav .inner ul li {
+    position: relative;
+    margin: 0;
+    border-bottom: 1px solid #333;
+}
+
+nav .inner ul li a {
+    display: block;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    padding: 1em;
+    text-decoration: none;
+    transition-duration: 0.2s;
+}
+
+nav .inner ul li a:hover {
+    background: #e4e4e4;
+}
+
+/* .toggle_btn */
+.toggle_btn {
+    display: block;
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    width: 30px;
+    height: 30px;
+    transition: all .5s;
+    cursor: pointer;
+    z-index: 3;
+}
+
+.toggle_btn span {
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 30px;
+    height: 2px;
+    background-color: #333;
+    border-radius: 4px;
+    transition: all .5s;
+}
+
+.toggle_btn span:nth-child(1) {
+    top: 4px;
+}
+
+.toggle_btn span:nth-child(2) {
+    top: 14px;
+}
+
+.toggle_btn span:nth-child(3) {
+    bottom: 4px;
+}
+
+.open .toggle_btn span {
+    background-color: #fff;
+}
+
+.open .toggle_btn span:nth-child(1) {
+    -webkit-transform: translateY(10px) rotate(-315deg);
+    transform: translateY(10px) rotate(-315deg);
+}
+
+.open .toggle_btn span:nth-child(2) {
+    opacity: 0;
+}
+
+.open .toggle_btn span:nth-child(3) {
+    -webkit-transform: translateY(-10px) rotate(315deg);
+    transform: translateY(-10px) rotate(315deg);
+}
+
+/* #mask */
+#mask {
+    display: none;
+    transition: all .5s;
+}
+
+.open #mask {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: .8;
+    z-index: 2;
+    cursor: pointer;
+}
+
+/* TopMain */
+.top_wrap {
+    display: block;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.top_slider {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.top_slider li {
+    width: 100%;
+    object-fit: cover;
+}
+
+.top_slider li:first-of-type {
+    background-image: url(images/img_top-slide-1.jpg);
+}
+
+.top_slider li:nth-of-type(2) {
+    background-image: url(images/img_top-slide-2.jpg);
+}
+
+.top_slider li:last-of-type {
+    background-image: url(images/img_top-slide-3.jpg);
+}
+
+/* concept */
+.title img {
+    display: flex;
+    width: 168px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.concept_text {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 16px;
+    line-height: 2.5;
+    margin-bottom: 160px;
+}
+
+/* service */
+.service_wrap {
+    max-width: 1000px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    padding: 0 10px;
+}
+
+.service_wrap>div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 160px;
+}
+
+.service_items {
+    width: 25%;
+}
+
+.service_items img {
+    border-radius: 50%;
+}
+
+.service_items h3 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 28px;
+    font-weight: normal;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+.service_items h4 {
+    font-size: 12px;
+    font-weight: normal;
+    text-align: center;
+    margin: 8px 0 16px;
+}
+
+.service_items p {
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* works */
+.works {
+    height: 520px;
+    width: 100%;
+    padding: 20px 0;
+    margin-bottom: 160px;
+    background: linear-gradient(90deg, rgba(235, 255, 230, 1), rgba(210, 230, 255, 1));
+}
+
+.slider1 {
+    max-width: 840px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+.slick-arrow {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    padding: 0;
+    width: 20px;
+    color: transparent;
+    z-index: 1;
+    transition: opacity 0.5s;
+    z-index: 1;
+}
+
+.slick-arrow:hover {
+    opacity: 0.7;
+}
+
+/* 共通設定 */
+.slick-next::before,
+.slick-next::after,
+.slick-prev::before,
+.slick-prev::after {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    content: "";
+    vertical-align: middle;
+}
+
+.slick-next::after,
+.slick-prev::after {
+    width: 26px;
+    height: 26px;
+    border-top: 1px solid #333;
+    border-right: 1px solid #333;
+}
+
+.slick-next {
+    right: -30px;
+}
+
+.slick-next::after {
+    right: 4px;
+    transform: rotate(45deg);
+}
+
+/* prev */
+.slick-prev {
+    left: -30px;
+}
+
+.slick-prev::after {
+    left: 4px;
+    transform: rotate(-135deg);
+}
+
+/* .multiple-items {
+    max-width: 840px;
+    margin: 0 auto;
+}
+
+.multiple-items img {
+    margin-bottom: 20px;
+} */
+
+
+.more_btn a {
+    display: block;
+    width: 250px;
+    margin: 0 auto;
+    padding: 16px 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 18px;
+    text-align: center;
+    color: #000;
+    border: #000 solid 1px;
+    margin: 0 auto;
+    transition: all 0.3s;
+}
+
+.more_btn a:hover {
+    transform: translate3d(0, 3px, 0);
+    color: #000;
+    background: #fff;
+}
+
+/* about */
+.about {
+    padding: 0 10px;
+    text-align: center;
+}
+
+.name {
+    font-family: 'Roboto', sans-serif;
+    font-size: 26px;
+    margin-bottom: 16px;
+}
+
+.self-intro {
+    width: 41%;
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 1.8;
+    text-align: justify;
+    margin-bottom: 80px;
+}
+
+/* contact */
+.contact {
+    padding: 0 10px;
+    margin: 0 auto;
+    text-align: center;
+    max-width: 1000px;
+    padding: 40px 0;
+    background: #e6f0e6;
+    margin-bottom: 80px;
+    position: relative;
+}
+
+.contact_wrap {
+    max-width: 1000px;
+    text-align: center;
+}
+
+.contact_text {
+    margin: 16px 0 24px;
+    font-size: 14px;
+}
+
+.contact_btn a {
+    display: block;
+    width: 450px;
+    margin: 0 auto;
+    padding: 24px 0;
+    font-size: 18px;
+    text-align: center;
+    margin: 0 auto;
+    background: #fff;
+    transition: all 0.3s;
+}
+
+.contact_btn a:hover {
+    transform: translate3d(0, 3px, 0);
+    color: #fff;
+    background: #8c8c8c;
+}
+
+.flower img {
+    position: absolute;
+    width: 8%;
+    right: 70px;
+    bottom: -40px;
+    margin: 0 auto;
+}
+
+/* footer */
+.footer {
+    background: #e1f0ff;
+    padding: 0 10px;
+}
+
+.footer_wrap {
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-top: 80px;
+    align-items: center;
+    margin-bottom: 10px;
+    justify-content: space-between;
+}
+
+.logo_footer {
+    width: 400px;
+    margin: 0 60px;
+}
+
+hr.style_1 {
+    border-top: 1px solid #000;
+    width: 30%;
+}
+
+.sns_comment {
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    align-items: center;
+    margin-right: 5px;
+}
+
+hr.style_2 {
+    border-top: 1px solid #000;
+    max-width: 1000px;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+.footer p small {
+    display: block;
+    color: #000000;
+    font-size: 12px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 40px 0 60px;
+}
+
+@media screen and (max-width: 767px) {
+    .br_sp {
+        display: block;
+    }
+
+    /* header */
+    .header_wrap {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        width: 100%;
+    }
+
+    .logo img {
+        width: 104px;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 1;
+    }
+
+    /* .toggle_btn */
+    .toggle_btn {
+        display: block;
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 30px;
+        height: 30px;
+        transition: all .5s;
+        cursor: pointer;
+        z-index: 3;
+    }
+
+    /* concept */
+    .title img {
+        display: block;
+        width: 30%;
+        margin: 0 auto;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .concept_text {
+        font-size: 14px;
+        line-height: 2.2;
+        margin-bottom: 80px;
+    }
+
+    /* service */
+    .service_wrap>div {
+        display: block;
+    }
+
+    .service_items {
+        width: 75%;
+        margin: 0 auto;
+    }
+
+    .service_items img {
+        width: 60%;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .service_items p {
+        margin-bottom: 40px;
+    }
+
+    /* about */
+    .name {
+        font-size: 24px;
+        margin-bottom: 16px;
+    }
+
+    .self-intro {
+        width: 85%;
+    }
+
+    /* contact */
+    .contact_text {
+        line-height: 1.6;
+    }
+
+    .contact_btn a {
+        display: block;
+        width: 300px;
+        padding: 20px 0;
+        font-size: 16px;
+    }
+
+    .flower img {
+        display: none;
+    }
+
+    /* footer */
+
+    .footer_wrap {
+        padding-top: 60px;
+    }
+
+    .logo_footer {
+        width: 75%;
+        margin: 0 15px;
+    }
+
+    hr.style_1,
+    .sns_comment {
+        display: none;
+    }
+
+    .footer p small {
+        padding: 10px 0 40px;
+    }
+}

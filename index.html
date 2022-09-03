@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mizuiro portfolio｜ポートフォリオサイト</title>
+    <meta name="description" content="ポートフォリオサイト">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+    <link rel="stylesheet" href="CSS/sanitize.css"> <!-- リセットCSS -->
+    <link rel="stylesheet" href="CSS/style.css"> <!-- スタイルシート -->
+    <!-- Google fonts 読み込み / Roboto Thin 100 italic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script><!-- jquery -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- Font Awesome SVG画像形式 -->
+    <script defer src="https://use.fontawesome.com/releases/v6.2.0/js/all.js"></script>
+</head>
+
+<body>
+    <!-- header -->
+    <header id="header">
+        <div class="header_wrap">
+            <h1 class="logo">
+                <img src="images/logo_header@2x.png" alt="mizuiro portfolio">
+            </h1>
+            <div id="navArea">
+                <nav>
+                    <div class="inner">
+                        <ul>
+                            <li><a href="#Concept">Concept</a></li>
+                            <li><a href="#Service">Service</a></li>
+                            <li><a href="#Works">Works</a></li>
+                            <li><a href="#About">About</a></li>
+                            <li><a href="#Contact">Contact</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="toggle_btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div id="mask"></div>
+            </div>
+        </div>
+
+    </header>
+
+    <main>
+        <!-- TopMain -->
+        <div class="topmain">
+            <div class="top_wrap">
+                <img src="images/img_main.png" alt="">
+            </div>
+            <ul class="top_slider">
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <!-- Concept -->
+        <section class="concept" id="Concept">
+            <h2 class="title">
+                <img src="images/title_concept@2x.png" alt="concept|コンセプト・方針">
+            </h2>
+            <div class="concept_text">名刺やチラシにパンフレットといったグラフィックデザイン、<br>
+                Webサイトのデザインやコーディングなどを承ります。<br>
+                デザインに関するお困りごとがあれば、<br class="br_sp">お気軽にご相談ください。<br>
+                じっくりとお話を伺い、あなたの想いをカタチにする<br class="br_sp">お手伝いをいたします。</div>
+        </section>
+
+        <!-- Service -->
+        <section class="service" id="Service">
+            <h2 class="title">
+                <img src="images/title_service@2x.png" alt="service|サービス内容">
+            </h2>
+            <div class="service_wrap">
+                <div>
+                    <div class="service_items">
+                        <picture>
+                            <source srcset="" media="(max-width:767px)">
+                            <img src="images/img_service-web@2x.png" alt="">
+                        </picture>
+                        <div class="service_content_wrap">
+                            <h3>web design</h3>
+                            <h4>web サイト・バナー・アイコン etc ...</h4>
+                            <p>コーポレートサイトやランディングページなどのwebサイト制作を承ります。企業やブランドイメージ、サービス内容などをわかりやすくページに落とし込みます。</p>
+                        </div>
+                    </div>
+
+                    <div class="service_items">
+                        <picture>
+                            <source srcset="" media="(max-width:767px)">
+                            <img src="images/img_service-coding@2x.png" alt="">
+                        </picture>
+                        <div class="service_content_wrap">
+                            <h3>coding</h3>
+                            <h4>設計・デザイン</h4>
+                            <p>HTML&CSS、JavaScript（jQuery）を用いて、デザインカンプからコーディングをいたします。PC・スマートフォンどちらでも見やすいレスポンシブ対応もおまかせください。
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="service_items">
+                        <picture>
+                            <source srcset="" media="(max-width:767px)">
+                            <img src="images/img_service-graphic@2x.png" alt="">
+                        </picture>
+                        <div class="service_content_wrap">
+                            <h3>graphic design</h3>
+                            <h4>名刺・チラシ・パンフレット etc ...</h4>
+                            <p>名刺やチラシ、パンフレットをはじめとした紙媒体の制作を承ります。イベント告知や販促ツールなど、幅広いシーンや用途にあわせて対応・提案いたします。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Works -->
+        <section class="works" id="Works">
+            <h2 class="title">
+                <img src="images/title_works@2x.png" alt="works|制作実績">
+            </h2>
+            <div class="slider1">
+                <li>
+                    <picture>
+                        <source srcset="" media="(max-width:767px)">
+                        <img src="images/img_slideworks01@2x.png" alt="">
+                    </picture>
+                </li>
+                <li>
+                    <picture>
+                        <source srcset="" media="(max-width:767px)">
+                        <img src="images/img_slideworks02@2x.png" alt="">
+                    </picture>
+                </li>
+                <li>
+                    <picture>
+                        <source srcset="" media="(max-width:767px)">
+                        <img src="images/img_slideworks03@2x.png" alt="">
+                    </picture>
+                </li>
+                <li>
+                    <picture>
+                        <source srcset="" media="(max-width:767px)">
+                        <img src="images/img_slideworks04@2x.png" alt="">
+                    </picture>
+                </li>
+                <li>
+                    <picture>
+                        <source srcset="" media="(max-width:767px)">
+                        <img src="images/img_slideworks05@2x.png" alt="">
+                    </picture>
+                </li>
+                <li>
+                    <picture>
+                        <source srcset="" media="(max-width:767px)">
+                        <img src="images/img_slideworks06@2x.png" alt="">
+                    </picture>
+                </li>
+            </div>
+
+            <div class="more_btn">
+                <a href="">view more ></a>
+            </div>
+        </section>
+
+        <!-- About -->
+        <section class="about" id="About">
+            <h2 class="title">
+                <img src="images/title_about@2x.png" alt="about|自己紹介">
+            </h2>
+            <div class="name">Sayuri Mizushima</div>
+            <div class="self-intro">
+                出版関係の企業にてインハウスグラフィックデザイナーとして働く傍ら、Webサイトのデザイン・制作も行っています。名刺やチラシ、パンフレットといったグラフィックデザイン、Webサイトのデザインやコーディングなど承ります。具体的に何か欲しいものが定まっている場合はもちろん、まだしっかり決まっているわけではなく、ふんわりとした希望であっても構いません。まずはどのような想いをお持ちか、じっくりとお聞かせください。あなたの想いをカタチにするお手伝いをいたします。<br>
+                skill：Illustrator/Photoshop/InDesign/Visual Studio Code
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="contact" id="Contact">
+            <h2 class="title">
+                <img src="images/title_contact@2x.png" alt="contact|お問合せ">
+            </h2>
+            <div class="contact_wrap">
+                <div class="contact_text">制作のご依頼やご質問など、<br class="br_sp">まずは気軽にご相談ください。</div>
+                <div class="contact_btn">
+                    <a href="">お問合せはこちらから　＞</a>
+                </div>
+            </div>
+            <div class="flower">
+                <img src="images/img_flower@2x.png" alt="">
+            </div>
+
+        </section>
+
+        <!-- footer -->
+        <footer>
+            <div class="footer">
+                <div class="footer_wrap">
+                    <p class="logo_footer">
+                        <img src="images/logo_footer@2x.png" alt="">
+                    </p>
+                    <hr class="style_1">
+                    <div class="sns_comment">Follow me!</div>
+                    <div class="icon_twitter">
+                        <a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter fa-fw"></i>
+                        </a>
+                    </div>
+                    <div class="icon_insta">
+                        <a href="https://www.instagram.com/" target="_blank"><i
+                                class="fa-brands fa-instagram fa-fw"></i>
+                        </a>
+                    </div>
+                </div>
+                <hr class="style_2">
+                <p><small>&copy; 2022 mizuiro portfolio</small></p>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        $(function () {
+            var $nav = $('#navArea');
+            var $btn = $('.toggle_btn');
+            var $mask = $('#mask');
+            var open = 'open'; // class
+            // menu open close
+            $btn.on('click', function () {
+                if (!$nav.hasClass(open)) {
+                    $nav.addClass(open);
+                } else {
+                    $nav.removeClass(open);
+                }
+            });
+            // mask close
+            $mask.on('click', function () {
+                $nav.removeClass(open);
+            });
+
+            $('.top_slider').slick({
+                infinite: true, //スライドのループを有効
+                arrows: false, //前へ、次への矢印ボタンの有無
+                fade: true, //スライドの切り替えをフェードに
+                speed: 2000, //アニメーションの切り替えスピード
+                autoplaySpeed: 3000, //自動再生時のスライドの静止時間
+                autoplay: true, //スライダーの自動再生
+                pauseOnFocus: false, //フォーカスで一時停止を無効
+                pauseOnHover: false, //マウスホバーで一時停止を無効
+                pauseOnDotsHover: false, //ドットナビゲーションをマウスホバーで一時停止を無効
+            });
+
+            $('.slider1').slick({
+                autoplay: true,
+                autoplaySpeed: 3000,
+                cssEase: "linear",//スライドの流れ方を等速に設定
+                slidesToShow: 3,//表示するスライドの数
+                slidesToScroll: 1,//スクロールするスライドの数
+                swipe: false,// 操作による切り替えはさせない
+                arrows: true,//矢印表示
+                pauseOnFocus: false,//スライダーをフォーカスした時にスライドを停止させない
+                pauseOnHover: false,//スライダーにマウスホバーした時にスライドを停止させない
+                responsive: [
+                    {
+                        breakpoint: 767,
+                        settings: {
+                            slidesToShow: 1,
+                            arrows: false,
+                        },
+                    },
+                ],
+            });
+            // $('.multiple-items').slick({
+            //     infinite: true,
+            //     slidesToShow: 3,
+            //     slidesToScroll: 3
+            // });
+        })(jQuery);
+    </script>
+</body>
+
+</html>
