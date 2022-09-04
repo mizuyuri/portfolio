@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mizuiro portfolio｜ポートフォリオサイト</title>
+    <meta name="description" content="ポートフォリオサイト">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+    <link rel="stylesheet" href="CSS/sanitize.css"> <!-- リセットCSS -->
+    <link rel="stylesheet" href="CSS/style.css"> <!-- スタイルシート -->
+    <!-- Google fonts 読み込み / Roboto Thin 100 italic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script><!-- jquery -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- Font Awesome SVG画像形式 -->
+    <script defer src="https://use.fontawesome.com/releases/v6.2.0/js/all.js"></script>
+</head>
+
+<body>
+    <!-- header -->
+    <header id="header">
+        <div class="header_wrap">
+            <h1 class="logo">
+                <img src="images/logo_header@2x.png" alt="mizuiro portfolio">
+            </h1>
+            <div id="navArea">
+                <nav>
+                    <div class="inner">
+                        <ul>
+                            <li><a href="index.html">Concept</a></li>
+                            <li><a href="#Service">Service</a></li>
+                            <li><a href="works.html">Works</a></li>
+                            <li><a href="#About">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="toggle_btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div id="mask"></div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Works -->
+        <section class="works-list" id="Works-list">
+            <h2 class="title">
+                <img src="images/title_works_b@2x.png" alt="works|制作実績">
+            </h2>
+            <div class="works_wrap">
+                <div class="works1"><a href="../portfolio/worksdetail/works1.html"><img
+                            src="images/img_listworks01@2x.png" alt=""></a></div>
+                <div class="works2"><a href="../portfolio/worksdetail/works2.html"><img
+                            src="images/img_listworks02@2x.png" alt=""></a></div>
+                <div class="works3"><a href="../portfolio/worksdetail/works3.html"><img
+                            src="images/img_listworks03@2x.png" alt=""></a></div>
+                <div class="works4"><a href="../portfolio/worksdetail/works4.html"><img
+                            src="images/img_listworks04@2x.png" alt=""></a></div>
+                <div class="works5"><a href="../portfolio/worksdetail/works5.html"><img
+                            src="images/img_listworks05@2x.png" alt=""></a></div>
+                <div class="works6"><a href="../portfolio/worksdetail/works6.html"><img
+                            src="images/img_listworks06@2x.png" alt=""></a></div>
+            </div>
+            <div class="comment">
+                <p>※上記制作実績には載せていない、<br class="br_sp">非公開実績もございます。<br>
+                    お問合せページより、お気軽にご連絡ください。</p>
+            </div>
+            <div class="back_btn">
+                <a href="index.html">back</a>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="contact" id="Contact">
+            <h2 class="title">
+                <img src="images/title_contact@2x.png" alt="contact|お問合せ">
+            </h2>
+            <div class="contact_wrap">
+                <div class="contact_text">制作のご依頼やご質問など、<br class="br_sp">まずは気軽にご相談ください。</div>
+                <div class="contact_btn">
+                    <a href="contact.html">お問合せはこちらから　＞</a>
+                </div>
+            </div>
+            <div class="flower">
+                <img src="images/img_flower@2x.png" alt="">
+            </div>
+
+        </section>
+
+        <!-- footer -->
+        <footer>
+            <div class="footer">
+                <div class="footer_wrap">
+                    <p class="logo_footer">
+                        <img src="images/logo_footer@2x.png" alt="">
+                    </p>
+                    <hr class="style_1">
+                    <div class="sns_comment">Follow me!</div>
+                    <div class="icon_twitter">
+                        <a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter fa-fw"></i>
+                        </a>
+                    </div>
+                    <div class="icon_insta">
+                        <a href="https://www.instagram.com/" target="_blank"><i
+                                class="fa-brands fa-instagram fa-fw"></i>
+                        </a>
+                    </div>
+                </div>
+                <hr class="style_2">
+                <p><small>&copy; 2022 mizuiro portfolio</small></p>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        $(function () {
+            var $nav = $('#navArea');
+            var $btn = $('.toggle_btn');
+            var $mask = $('#mask');
+            var open = 'open'; // class
+            // menu open close
+            $btn.on('click', function () {
+                if (!$nav.hasClass(open)) {
+                    $nav.addClass(open);
+                } else {
+                    $nav.removeClass(open);
+                }
+            });
+            // mask close
+            $mask.on('click', function () {
+                $nav.removeClass(open);
+            });
+
+            // $('.top_slider').slick({
+            //     infinite: true, //スライドのループを有効
+            //     arrows: false, //前へ、次への矢印ボタンの有無
+            //     fade: true, //スライドの切り替えをフェードに
+            //     speed: 2000, //アニメーションの切り替えスピード
+            //     autoplaySpeed: 3000, //自動再生時のスライドの静止時間
+            //     autoplay: true, //スライダーの自動再生
+            //     pauseOnFocus: false, //フォーカスで一時停止を無効
+            //     pauseOnHover: false, //マウスホバーで一時停止を無効
+            //     pauseOnDotsHover: false, //ドットナビゲーションをマウスホバーで一時停止を無効
+            // });
+
+
+            //     $('.slider1').slick({
+            //         autoplay: true,
+            //         autoplaySpeed: 3000,
+            //         cssEase: "linear",//スライドの流れ方を等速に設定
+            //         slidesToShow: 3,//表示するスライドの数
+            //         slidesToScroll: 1,//スクロールするスライドの数
+            //         swipe: false,// 操作による切り替えはさせない
+            //         arrows: true,//矢印表示
+            //         pauseOnFocus: false,//スライダーをフォーカスした時にスライドを停止させない
+            //         pauseOnHover: false,//スライダーにマウスホバーした時にスライドを停止させない
+            //         responsive: [
+            //             {
+            //                 breakpoint: 767,
+            //                 settings: {
+            //                     slidesToShow: 1,
+            //                     arrows: false,
+            //                 },
+            //             },
+            //         ],
+            //     });
+        })(jQuery);
+    </script>
+</body>
+
+</html>

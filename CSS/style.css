@@ -71,7 +71,7 @@ html {
     position: fixed;
     top: 20px;
     left: 80px;
-    z-index: 1;
+    z-index: 1000;
 }
 
 nav {
@@ -86,7 +86,7 @@ nav {
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     transition: all .5s;
-    z-index: 3;
+    z-index: 1100;
     opacity: 0;
 }
 
@@ -135,7 +135,7 @@ nav .inner ul li a:hover {
     height: 30px;
     transition: all .5s;
     cursor: pointer;
-    z-index: 3;
+    z-index: 1100;
 }
 
 .toggle_btn span {
@@ -199,32 +199,31 @@ nav .inner ul li a:hover {
 }
 
 /* TopMain */
+.topmain {
+    margin-bottom: 300px;
+    /* ↑コンセプトのタイトルが見えなくなってしまったので
+    入れたものの、この指定でOK? */
+}
+
 .top_wrap {
     display: block;
-    max-width: 1000px;
-    margin: 0 auto;
-}
-
-.top_slider {
     width: 100%;
     margin: 0 auto;
+    position: absolute;
+    top: 10px;
+    left: 0;
+    z-index: 100;
 }
 
-.top_slider li {
+.top_wrap img {
+    margin: 0 auto;
     width: 100%;
-    object-fit: cover;
 }
 
-.top_slider li:first-of-type {
-    background-image: url(images/img_top-slide-1.jpg);
-}
-
-.top_slider li:nth-of-type(2) {
-    background-image: url(images/img_top-slide-2.jpg);
-}
-
-.top_slider li:last-of-type {
-    background-image: url(images/img_top-slide-3.jpg);
+.top_slider img {
+    display: block;
+    width: 45%;
+    margin: 0 auto;
 }
 
 /* concept */
@@ -291,7 +290,8 @@ nav .inner ul li a:hover {
 /* works */
 .works {
     height: 520px;
-    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
     padding: 20px 0;
     margin-bottom: 160px;
     background: linear-gradient(90deg, rgba(235, 255, 230, 1), rgba(210, 230, 255, 1));
@@ -361,17 +361,8 @@ nav .inner ul li a:hover {
     transform: rotate(-135deg);
 }
 
-/* .multiple-items {
-    max-width: 840px;
-    margin: 0 auto;
-}
-
-.multiple-items img {
-    margin-bottom: 20px;
-} */
-
-
-.more_btn a {
+.more_btn a,
+.back_btn a {
     display: block;
     width: 250px;
     margin: 0 auto;
@@ -385,7 +376,8 @@ nav .inner ul li a:hover {
     transition: all 0.3s;
 }
 
-.more_btn a:hover {
+.more_btn a:hover,
+.back_btn a:hover {
     transform: translate3d(0, 3px, 0);
     color: #000;
     background: #fff;
@@ -460,6 +452,130 @@ nav .inner ul li a:hover {
     margin: 0 auto;
 }
 
+/* 下層ページ contact 詳細 */
+.contact_page {
+    padding: 0 10px;
+    margin: 0 auto;
+    text-align: center;
+    max-width: 1000px;
+    padding: 40px 0;
+    border: 5px solid #e6f0e6;
+    margin-top: 120px;
+    margin-bottom: 80px;
+    position: relative;
+    box-sizing: border-box;
+}
+
+.swag img {
+    position: absolute;
+    width: 40%;
+    left: 20px;
+    top: -120px;
+    margin: 0 auto;
+}
+
+.attention {
+    max-width: 500px;
+    border: 1px solid #000;
+    text-align: center;
+    padding: 16px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+.attention p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* お問合せフォーム部分 */
+.form_wrap {
+    max-width: 800px;
+    margin: auto;
+}
+
+.form_wrap table {
+    width: 100%;
+    font-size: 14px;
+    margin-top: 40px;
+    line-height: 1.5;
+}
+
+.form_wrap table th {
+    width: 30%;
+    border: 1px solid #E8E8E8;
+    padding: 3%;
+    background-color: #F7F7F7;
+    vertical-align: middle;
+    box-sizing: border-box;
+}
+
+.form_wrap table td {
+    width: 70%;
+    border: 1px solid #E8E8E8;
+    vertical-align: middle;
+    background-color: #ffffff;
+    padding: 3%;
+    box-sizing: border-box;
+}
+
+.form_wrap input {
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.form_wrap input[type='text'],
+input[type='email'],
+input[type='kana'] {
+    width: 80%;
+    border: solid 2px #ccc;
+}
+
+.form_wrap textarea {
+    border: solid 1px #ccc;
+    width: 80%;
+    box-sizing: border-box;
+}
+
+.form_wrap select {
+    width: 80%;
+    border: solid 1px #ccc;
+    height: 40px;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.form_wrap input[type="submit"] {
+    -webkit-appearance: none;
+    border: none;
+}
+
+.button {
+    text-decoration: none;
+    text-align: center;
+    color: #ffffff;
+    background-color: #333333;
+    width: 200px;
+    margin: 40px auto 0;
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease 0s;
+    opacity: 1;
+    cursor: pointer;
+}
+
+.button:hover {
+    opacity: 0.8;
+}
+
+/* @media (max-width: 1000px) {
+    .form_wrap {
+        width: 95%;
+    }
+} */
+
 /* footer */
 .footer {
     background: #e1f0ff;
@@ -510,6 +626,101 @@ hr.style_2 {
     padding: 40px 0 60px;
 }
 
+/* 下層ページ　Works-list */
+.works-list {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 10px;
+    margin-bottom: 160px;
+}
+
+.works_wrap {
+    display: flex;
+    max-width: 1000px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    margin: 0 auto;
+}
+
+.works_wrap div {
+    width: 45%;
+    margin-bottom: 60px;
+}
+
+.comment p {
+    font-size: 14px;
+    text-align: center;
+    line-height: 1.5;
+    margin: 0 auto;
+    padding: 0 10px;
+    margin-bottom: 40px;
+}
+
+/* 下層ページ　Works-detail */
+.works-detail {
+    max-width: 1000px;
+    text-align: center;
+}
+
+.img_works img {
+    width: 70%;
+    margin: 0 auto;
+    margin-bottom: 80px;
+}
+
+.text {
+    font-size: 16px;
+    margin-bottom: 80px;
+}
+
+.text dl {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.text dt {
+    font-weight: bold;
+    width: 20%;
+    padding: 16px 8px;
+    border-bottom: 1px solid #8c8c8c;
+    box-sizing: border-box;
+}
+
+.text dd {
+    width: 80%;
+    margin: 0;
+    padding: 16px 8px;
+    border-bottom: 1px solid #8c8c8c;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.capture_wrap {
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 10px;
+    text-align: center;
+    justify-content: space-between;
+}
+
+.caption {
+    font-size: 14px;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 16px;
+}
+
+.capture_pc {
+    width: 70%;
+}
+
+.capture_sp {
+    width: 20%;
+}
+
 @media screen and (max-width: 767px) {
     .br_sp {
         display: block;
@@ -528,7 +739,7 @@ hr.style_2 {
         position: fixed;
         top: 20px;
         left: 20px;
-        z-index: 1;
+        z-index: 300;
     }
 
     /* .toggle_btn */
@@ -541,7 +752,18 @@ hr.style_2 {
         height: 30px;
         transition: all .5s;
         cursor: pointer;
-        z-index: 3;
+        z-index: 300;
+    }
+
+    /* TopMain */
+    .topmain {
+        margin-bottom: 30px;
+        /* ↑コンセプトのタイトルが見えなくなってしまったので
+    入れたものの、この指定でOK? */
+    }
+
+    .topmain img {
+        margin-top: 40px;
     }
 
     /* concept */
@@ -579,6 +801,22 @@ hr.style_2 {
         margin-bottom: 40px;
     }
 
+    /* works */
+    .works {
+        height: 440px;
+        width: 80%;
+        margin: 0 auto;
+        padding: 20px 0;
+        margin-bottom: 80px;
+        background: linear-gradient(90deg, rgba(235, 255, 230, 1), rgba(210, 230, 255, 1));
+    }
+
+    .slider1 {
+        width: 80%;
+        margin: 0 auto;
+        margin-bottom: 40px;
+    }
+
     /* about */
     .name {
         font-size: 24px;
@@ -590,23 +828,89 @@ hr.style_2 {
     }
 
     /* contact */
+    .contact_page {
+        width: 90%;
+        margin-top: 40px;
+    }
+
     .contact_text {
         line-height: 1.6;
     }
 
-    .contact_btn a {
+    .contact_btn a,
+    .back_btn a {
         display: block;
-        width: 300px;
+        width: 250px;
         padding: 20px 0;
         font-size: 16px;
     }
 
+    .swag img,
     .flower img {
         display: none;
     }
 
-    /* footer */
+    .attention {
+        width: 80%;
+        border: 1px solid #000;
+        text-align: center;
+        padding: 16px;
+        margin: 0 auto;
+        margin-bottom: 40px;
+    }
 
+    .attention p {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+
+    /* お問合せフォーム部分 */
+    .form_wrap {
+        width: 90%;
+    }
+
+    .form_wrap table {
+        /* width: 90%; */
+        font-size: 12px;
+        margin-top: 25px;
+    }
+
+    .form_wrap table th {
+        width: 100%;
+        display: block;
+    }
+
+    .form_wrap table td {
+        width: 100%;
+        display: block;
+    }
+
+    .form_wrap input {
+        padding: 10px;
+    }
+
+    .form_wrap input[type='text'],
+    input[type='email'],
+    input[type='kana'] {
+        width: 100%;
+    }
+
+    .form_wrap textarea {
+        border: solid 1px #ccc;
+        width: 100%;
+    }
+
+    .form_wrap select {
+        width: 100%;
+    }
+
+    .button {
+        margin: 25px auto 0;
+        font-size: 14px;
+    }
+
+    /* footer */
     .footer_wrap {
         padding-top: 60px;
     }
@@ -624,4 +928,56 @@ hr.style_2 {
     .footer p small {
         padding: 10px 0 40px;
     }
+
+    /* 下層ページ　Works-list */
+    .works-list {
+        margin-bottom: 80px;
+    }
+
+    .works_wrap {
+        display: block;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .works_wrap div {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .img_works img {
+        width: 80%;
+        margin: 0 auto;
+        margin-bottom: 80px;
+    }
+
+    .text {
+        font-size: 14px;
+        margin-bottom: 40px;
+    }
+
+    .text dl {
+        margin-bottom: 20px;
+    }
+
+    .text dt {
+        width: 30%;
+    }
+
+    .text dd {
+        width: 70%;
+    }
+
+    .capture_wrap {
+        display: block;
+        width: 100%;
+    }
+
+    .capture_pc,
+    .capture_sp {
+        width: 100%;
+        margin-bottom: 40px;
+
+    }
+
 }

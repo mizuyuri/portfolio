@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mizuiro portfolio｜ポートフォリオサイト</title>
+    <meta name="description" content="ポートフォリオサイト">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css" />
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
+    <link rel="stylesheet" href="CSS/sanitize.css"> <!-- リセットCSS -->
+    <link rel="stylesheet" href="CSS/style.css"> <!-- スタイルシート -->
+    <!-- Google fonts 読み込み / Roboto Thin 100 italic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script><!-- jquery -->
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <!-- Font Awesome SVG画像形式 -->
+    <script defer src="https://use.fontawesome.com/releases/v6.2.0/js/all.js"></script>
+</head>
+
+<body>
+    <!-- header -->
+    <header id="header">
+        <div class="header_wrap">
+            <h1 class="logo">
+                <img src="images/logo_header@2x.png" alt="mizuiro portfolio">
+            </h1>
+            <div id="navArea">
+                <nav>
+                    <div class="inner">
+                        <ul>
+                            <li><a href="index.html">Concept</a></li>
+                            <li><a href="#Service">Service</a></li>
+                            <li><a href="works.html">Works</a></li>
+                            <li><a href="#About">About</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <div class="toggle_btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <div id="mask"></div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Contact -->
+        <section class="contact_page" id="Contact">
+            <h2 class="title">
+                <img src="images/title_contact@2x.png" alt="contact|お問合せ">
+            </h2>
+            <div class="contact_wrap">
+                <div class="contact_text">制作のご依頼やご質問など、<br class="br_sp">まずは気軽にご相談ください。</div>
+                <div class="attention">
+                    <p>3営業日までに返信いたします。<br>
+                        もし返信がない場合は、<br class="br_sp">「迷惑メール」フォルダもご確認ください。<br>
+                        営業目的のお問合せに関しては<br class="br_sp">返信しておりません。<br class="br_sp">ご了承ください。</p>
+                </div>
+            </div>
+            <div class="swag">
+                <img src="images/img_swag@2x.png" alt="">
+            </div>
+            <div class="flower">
+                <img src="images/img_flower@2x.png" alt="">
+            </div>
+            <div class="form_wrap">
+                <form action="" method="post">
+                    <table>
+                        <tr>
+                            <th>お名前</th>
+                            <td><input type="text" name="your-name" placeholder="山田　太郎"></td>
+                        </tr>
+                        <tr>
+                            <th>フリガナ</th>
+                            <td><input type="kana" name="kana" placeholder="ヤマダ　タロウ"></td>
+                        </tr>
+                        <tr>
+                            <th>メールアドレス</th>
+                            <td><input type="email" name="email" placeholder="○○○○○○○○@mail.com"></td>
+                        </tr>
+                        <tr>
+                            <th>お問合せ内容</th>
+                            <td>
+                                <select>
+                                    <option value="選択してください">選択してください</option>
+                                    <option value="選択肢1">グラフィックデザイン関連（ex:チラシ・名刺）</option>
+                                    <option value="選択肢2">Webデザイン関連（ex:バナー広告・webサイト制作）</option>
+                                    <option value="選択肢2">その他（質問など／詳細ご記入ください）</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>お問合せの概要・ご質問など</th>
+                            <td><textarea name="message" cols="40" rows="10"
+                                    placeholder="お問合せの概要やご質問など、ご記入ください。"></textarea></td>
+                        </tr>
+                    </table>
+                    <input type="submit" value="送信" class="button">
+                </form>
+            </div>
+
+        </section>
+
+        <!-- footer -->
+        <footer>
+            <div class="footer">
+                <div class="footer_wrap">
+                    <p class="logo_footer">
+                        <img src="images/logo_footer@2x.png" alt="">
+                    </p>
+                    <hr class="style_1">
+                    <div class="sns_comment">Follow me!</div>
+                    <div class="icon_twitter">
+                        <a href="https://twitter.com/" target="_blank"><i class="fa-brands fa-twitter fa-fw"></i>
+                        </a>
+                    </div>
+                    <div class="icon_insta">
+                        <a href="https://www.instagram.com/" target="_blank"><i
+                                class="fa-brands fa-instagram fa-fw"></i>
+                        </a>
+                    </div>
+                </div>
+                <hr class="style_2">
+                <p><small>&copy; 2022 mizuiro portfolio</small></p>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        $(function () {
+            var $nav = $('#navArea');
+            var $btn = $('.toggle_btn');
+            var $mask = $('#mask');
+            var open = 'open'; // class
+            // menu open close
+            $btn.on('click', function () {
+                if (!$nav.hasClass(open)) {
+                    $nav.addClass(open);
+                } else {
+                    $nav.removeClass(open);
+                }
+            });
+            // mask close
+            $mask.on('click', function () {
+                $nav.removeClass(open);
+            });
+
+            // $('.top_slider').slick({
+            //     infinite: true, //スライドのループを有効
+            //     arrows: false, //前へ、次への矢印ボタンの有無
+            //     fade: true, //スライドの切り替えをフェードに
+            //     speed: 2000, //アニメーションの切り替えスピード
+            //     autoplaySpeed: 3000, //自動再生時のスライドの静止時間
+            //     autoplay: true, //スライダーの自動再生
+            //     pauseOnFocus: false, //フォーカスで一時停止を無効
+            //     pauseOnHover: false, //マウスホバーで一時停止を無効
+            //     pauseOnDotsHover: false, //ドットナビゲーションをマウスホバーで一時停止を無効
+            // });
+
+
+            //     $('.slider1').slick({
+            //         autoplay: true,
+            //         autoplaySpeed: 3000,
+            //         cssEase: "linear",//スライドの流れ方を等速に設定
+            //         slidesToShow: 3,//表示するスライドの数
+            //         slidesToScroll: 1,//スクロールするスライドの数
+            //         swipe: false,// 操作による切り替えはさせない
+            //         arrows: true,//矢印表示
+            //         pauseOnFocus: false,//スライダーをフォーカスした時にスライドを停止させない
+            //         pauseOnHover: false,//スライダーにマウスホバーした時にスライドを停止させない
+            //         responsive: [
+            //             {
+            //                 breakpoint: 767,
+            //                 settings: {
+            //                     slidesToShow: 1,
+            //                     arrows: false,
+            //                 },
+            //             },
+            //         ],
+            //     });
+        })(jQuery);
+    </script>
+</body>
+
+</html>
