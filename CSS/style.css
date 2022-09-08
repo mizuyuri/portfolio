@@ -53,6 +53,10 @@ html {
     scroll-behavior: smooth;
 }
 
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
 .br_sp {
     display: none;
 }
@@ -194,7 +198,7 @@ nav .inner ul li a:hover {
     height: 100%;
     background: #000;
     opacity: .8;
-    z-index: 2;
+    z-index: 300;
     cursor: pointer;
 }
 
@@ -212,7 +216,7 @@ nav .inner ul li a:hover {
     position: absolute;
     top: 10px;
     left: 0;
-    z-index: 100;
+    z-index: 10;
 }
 
 .top_wrap img {
@@ -752,12 +756,12 @@ hr.style_2 {
         height: 30px;
         transition: all .5s;
         cursor: pointer;
-        z-index: 300;
+        z-index: 400;
     }
 
     /* TopMain */
     .topmain {
-        margin-bottom: 30px;
+        margin-bottom: 20px;
         /* ↑コンセプトのタイトルが見えなくなってしまったので
     入れたものの、この指定でOK? */
     }

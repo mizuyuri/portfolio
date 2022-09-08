@@ -27,16 +27,16 @@
     <header id="header">
         <div class="header_wrap">
             <h1 class="logo">
-                <img src="images/logo_header@2x.png" alt="mizuiro portfolio">
+                <a href="index.html"><img src="images/logo_header@2x.png" alt="mizuiro portfolio"></a>
             </h1>
             <div id="navArea">
                 <nav>
                     <div class="inner">
                         <ul>
                             <li><a href="index.html">Concept</a></li>
-                            <li><a href="#Service">Service</a></li>
+                            <li><a href="index.html#Service">Service</a></li>
                             <li><a href="works.html">Works</a></li>
-                            <li><a href="#About">About</a></li>
+                            <li><a href="index.html#About">About</a></li>
                             <li><a href="contact.html">Contact</a></li>
                         </ul>
                     </div>
@@ -152,41 +152,7 @@
             $mask.on('click', function () {
                 $nav.removeClass(open);
             });
-
-            // $('.top_slider').slick({
-            //     infinite: true, //スライドのループを有効
-            //     arrows: false, //前へ、次への矢印ボタンの有無
-            //     fade: true, //スライドの切り替えをフェードに
-            //     speed: 2000, //アニメーションの切り替えスピード
-            //     autoplaySpeed: 3000, //自動再生時のスライドの静止時間
-            //     autoplay: true, //スライダーの自動再生
-            //     pauseOnFocus: false, //フォーカスで一時停止を無効
-            //     pauseOnHover: false, //マウスホバーで一時停止を無効
-            //     pauseOnDotsHover: false, //ドットナビゲーションをマウスホバーで一時停止を無効
-            // });
-
-
-            //     $('.slider1').slick({
-            //         autoplay: true,
-            //         autoplaySpeed: 3000,
-            //         cssEase: "linear",//スライドの流れ方を等速に設定
-            //         slidesToShow: 3,//表示するスライドの数
-            //         slidesToScroll: 1,//スクロールするスライドの数
-            //         swipe: false,// 操作による切り替えはさせない
-            //         arrows: true,//矢印表示
-            //         pauseOnFocus: false,//スライダーをフォーカスした時にスライドを停止させない
-            //         pauseOnHover: false,//スライダーにマウスホバーした時にスライドを停止させない
-            //         responsive: [
-            //             {
-            //                 breakpoint: 767,
-            //                 settings: {
-            //                     slidesToShow: 1,
-            //                     arrows: false,
-            //                 },
-            //             },
-            //         ],
-            //     });
-        })(jQuery);
+        });
     </script>
 </body>
 
