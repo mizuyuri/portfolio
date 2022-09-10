@@ -27,17 +27,17 @@
     <header id="header">
         <div class="header_wrap">
             <h1 class="logo">
-                <img src="../images/logo_header@2x.png" alt="mizuiro portfolio">
+                <a href="../index.html"><img src="../images/logo_header@2x.png" alt="mizuiro portfolio">
             </h1>
             <div id="navArea">
                 <nav>
                     <div class="inner">
                         <ul>
-                            <li><a href="#Concept">Concept</a></li>
-                            <li><a href="#Service">Service</a></li>
-                            <li><a href="works.html">Works</a></li>
-                            <li><a href="#About">About</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="../index.html#Concept">Concept</a></li>
+                            <li><a href="../index.html#Service">Service</a></li>
+                            <li><a href="../works.html">Works</a></li>
+                            <li><a href="../index.html#About">About</a></li>
+                            <li><a href="../contact.html">Contact</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -45,6 +45,7 @@
                     <span></span>
                     <span></span>
                     <span></span>
+                    <p class="btn_menu">Menu</p>
                 </div>
                 <div id="mask"></div>
             </div>
@@ -140,22 +141,19 @@
     <script>
         $(function () {
             var $nav = $('#navArea');
+            var $nav_li = $('#navArea li');
             var $btn = $('.toggle_btn');
             var $mask = $('#mask');
             var open = 'open'; // class
             // menu open close
-            $btn.on('click', function () {
+            $($nav, $nav_li).on('click', function () {
                 if (!$nav.hasClass(open)) {
                     $nav.addClass(open);
                 } else {
                     $nav.removeClass(open);
                 }
             });
-            // mask close
-            $mask.on('click', function () {
-                $nav.removeClass(open);
-            });
-        })(jQuery);
+        });
     </script>
 </body>
 

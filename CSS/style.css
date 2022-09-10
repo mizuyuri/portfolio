@@ -7,9 +7,9 @@ header,
 footer,
 main,
 section,
-/* h1,
+h1,
 h2,
-h3, */
+h3,
 ul,
 li,
 p,
@@ -38,6 +38,12 @@ a:hover {
     opacity: 0.5;
 }
 
+.anchor {
+    display: block;
+    padding-top: 60px;
+    margin-top: -60px;
+}
+
 ul {
     /*左の「・」を消す*/
     list-style: none;
@@ -61,6 +67,52 @@ html:focus-within {
     display: none;
 }
 
+/* loadingアニメーション */
+/* Loading背景画面設定　*/
+#splash {
+    /*fixedで全面に固定*/
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    background: #e1f0ff;
+    text-align: center;
+    color: #8c8c8c;
+}
+
+/* Loading画像中央配置　*/
+#splash_logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Loading アイコンの大きさ設定　*/
+#splash_logo img {
+    width: 260px;
+}
+
+/* fadeUpをするアイコンの動き */
+.fadeUp {
+    animation-name: fadeUpAnime;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes fadeUpAnime {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 /* header */
 .header_wrap {
     display: flex;
@@ -68,6 +120,8 @@ html:focus-within {
     align-items: center;
     padding: 30px;
     width: 100%;
+    position: relative;
+    z-index: 200;
 }
 
 .logo img {
@@ -75,7 +129,7 @@ html:focus-within {
     position: fixed;
     top: 20px;
     left: 80px;
-    z-index: 1000;
+    z-index: 100;
 }
 
 nav {
@@ -153,6 +207,14 @@ nav .inner ul li a:hover {
     transition: all .5s;
 }
 
+.btn_menu {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 35px;
+    font-size: 11px;
+}
+
 .toggle_btn span:nth-child(1) {
     top: 4px;
 }
@@ -167,6 +229,10 @@ nav .inner ul li a:hover {
 
 .open .toggle_btn span {
     background-color: #fff;
+}
+
+.open .btn_menu {
+    color: #fff;
 }
 
 .open .toggle_btn span:nth-child(1) {
@@ -204,9 +270,7 @@ nav .inner ul li a:hover {
 
 /* TopMain */
 .topmain {
-    margin-bottom: 300px;
-    /* ↑コンセプトのタイトルが見えなくなってしまったので
-    入れたものの、この指定でOK? */
+    margin-bottom: 240px;
 }
 
 .top_wrap {
@@ -214,7 +278,7 @@ nav .inner ul li a:hover {
     width: 100%;
     margin: 0 auto;
     position: absolute;
-    top: 10px;
+    top: 40px;
     left: 0;
     z-index: 10;
 }
@@ -226,8 +290,101 @@ nav .inner ul li a:hover {
 
 .top_slider img {
     display: block;
-    width: 45%;
+    width: 40%;
     margin: 0 auto;
+}
+
+/* スクロール */
+.scroll {
+    position: relative;
+    top: 100px;
+    z-index: 20;
+}
+
+/*スクロールダウン全体の場所*/
+.scrolldown {
+    /*描画位置*/
+    position: absolute;
+    left: 50%;
+    margin-bottom: 40px;
+}
+
+/*Scrollテキストの描写*/
+.scrolldown span {
+    /*描画位置*/
+    position: absolute;
+    left: 10px;
+    bottom: 5px;
+    /*テキストの形状*/
+    color: #333;
+    font-size: 0.7rem;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 0.05em;
+    /*縦書き設定*/
+    -ms-writing-mode: tb-rl;
+    -webkit-writing-mode: vertical-rl;
+    writing-mode: vertical-rl;
+}
+
+/* 丸の描写 */
+.scrolldown:before {
+    content: "";
+    /*描画位置*/
+    position: absolute;
+    bottom: 0;
+    left: -4px;
+    /*丸の形状*/
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #333;
+    /*丸の動き1.6秒かけて透過し、永遠にループ*/
+    animation:
+        circlemove 1.6s ease-in-out infinite,
+        cirlemovehide 1.6s ease-out infinite;
+}
+
+/*下からの距離が変化して丸の全体が上から下に動く*/
+@keyframes circlemove {
+    0% {
+        bottom: 45px;
+    }
+
+    100% {
+        bottom: -5px;
+    }
+}
+
+/*上から下にかけて丸が透過→不透明→透過する*/
+@keyframes cirlemovehide {
+    0% {
+        opacity: 0
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 0.9;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+/* 線の描写 */
+.scrolldown:after {
+    content: "";
+    /*描画位置*/
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    /*線の形状*/
+    width: 2px;
+    height: 50px;
+    background: #333;
 }
 
 /* concept */
@@ -268,6 +425,7 @@ nav .inner ul li a:hover {
 
 .service_items img {
     border-radius: 50%;
+    margin-bottom: 40px;
 }
 
 .service_items h3 {
@@ -291,13 +449,14 @@ nav .inner ul li a:hover {
     text-align: justify;
 }
 
+
 /* works */
 .works {
-    height: 520px;
+    height: 560px;
     max-width: 1000px;
     margin: 0 auto;
-    padding: 20px 0;
-    margin-bottom: 160px;
+    padding: 30px 0;
+    margin-bottom: 150px;
     background: linear-gradient(90deg, rgba(235, 255, 230, 1), rgba(210, 230, 255, 1));
 }
 
@@ -305,6 +464,12 @@ nav .inner ul li a:hover {
     max-width: 840px;
     margin: 0 auto;
     margin-bottom: 40px;
+}
+
+.slider1 img {
+    width: 90%;
+    margin: 10px auto;
+    box-shadow: 5px 5px 5px rgb(0, 0, 0, 0.2);
 }
 
 .slick-arrow {
@@ -394,8 +559,10 @@ nav .inner ul li a:hover {
 }
 
 .name {
+    display: block;
     font-family: 'Roboto', sans-serif;
     font-size: 26px;
+    text-align: center;
     margin-bottom: 16px;
 }
 
@@ -423,6 +590,7 @@ nav .inner ul li a:hover {
 .contact_wrap {
     max-width: 1000px;
     text-align: center;
+    line-height: 1.5;
 }
 
 .contact_text {
@@ -529,8 +697,7 @@ nav .inner ul li a:hover {
 }
 
 .form_wrap input[type='text'],
-input[type='email'],
-input[type='kana'] {
+input[type='email'] {
     width: 80%;
     border: solid 2px #ccc;
 }
@@ -573,12 +740,6 @@ input[type='kana'] {
 .button:hover {
     opacity: 0.8;
 }
-
-/* @media (max-width: 1000px) {
-    .form_wrap {
-        width: 95%;
-    }
-} */
 
 /* footer */
 .footer {
@@ -761,13 +922,22 @@ hr.style_2 {
 
     /* TopMain */
     .topmain {
-        margin-bottom: 20px;
-        /* ↑コンセプトのタイトルが見えなくなってしまったので
-    入れたものの、この指定でOK? */
+        margin-bottom: 100px;
     }
 
     .topmain img {
-        margin-top: 40px;
+        margin-top: 20px;
+    }
+
+    .top_slider img {
+        display: block;
+        width: 70%;
+        margin-top: 60px;
+    }
+
+    /* スクロール */
+    .scroll {
+        top: 60px;
     }
 
     /* concept */
@@ -776,7 +946,7 @@ hr.style_2 {
         width: 30%;
         margin: 0 auto;
         text-align: center;
-        margin-bottom: 20px;
+        margin-bottom: 40px;
     }
 
     .concept_text {
@@ -784,6 +954,17 @@ hr.style_2 {
         line-height: 2.2;
         margin-bottom: 80px;
     }
+
+    /* works */
+    .works {
+        height: 400px;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 30px 0;
+        margin-bottom: 150px;
+        background: linear-gradient(90deg, rgba(235, 255, 230, 1), rgba(210, 230, 255, 1));
+    }
+
 
     /* service */
     .service_wrap>div {
@@ -799,6 +980,7 @@ hr.style_2 {
         width: 60%;
         display: block;
         margin: 0 auto;
+        margin-bottom: 20px;
     }
 
     .service_items p {
@@ -807,16 +989,15 @@ hr.style_2 {
 
     /* works */
     .works {
-        height: 440px;
+        height: 460px;
         width: 80%;
         margin: 0 auto;
         padding: 20px 0;
-        margin-bottom: 80px;
-        background: linear-gradient(90deg, rgba(235, 255, 230, 1), rgba(210, 230, 255, 1));
+        margin-bottom: 60px;
     }
 
     .slider1 {
-        width: 80%;
+        width: 75%;
         margin: 0 auto;
         margin-bottom: 40px;
     }
@@ -828,13 +1009,13 @@ hr.style_2 {
     }
 
     .self-intro {
-        width: 85%;
+        width: 80%;
     }
 
     /* contact */
     .contact_page {
         width: 90%;
-        margin-top: 40px;
+        margin-top: 80px;
     }
 
     .contact_text {
@@ -875,7 +1056,6 @@ hr.style_2 {
     }
 
     .form_wrap table {
-        /* width: 90%; */
         font-size: 12px;
         margin-top: 25px;
     }
@@ -916,12 +1096,12 @@ hr.style_2 {
 
     /* footer */
     .footer_wrap {
-        padding-top: 60px;
+        padding: 60px 10px 0;
     }
 
     .logo_footer {
         width: 75%;
-        margin: 0 15px;
+        margin: 0 8px;
     }
 
     hr.style_1,
@@ -939,9 +1119,7 @@ hr.style_2 {
     }
 
     .works_wrap {
-        display: block;
-        width: 100%;
-        margin: 0 auto;
+        width: 90%;
     }
 
     .works_wrap div {
@@ -982,6 +1160,52 @@ hr.style_2 {
         width: 100%;
         margin-bottom: 40px;
 
+    }
+
+    /* 下層ページ　Works-detail */
+    .works-detail {
+        width: 95%;
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .img_works img {
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 80px;
+    }
+
+    .text {
+        font-size: 16px;
+        margin-bottom: 80px;
+    }
+
+    .text dl {
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 40px;
+    }
+
+    .text dt {
+        font-weight: bold;
+        width: 30%;
+    }
+
+    .text dd {
+        width: 70%;
+    }
+
+    .capture_wrap {
+        display: block;
+        width: 100%;
+    }
+
+    .capture_pc {
+        width: 100%;
+    }
+
+    .capture_sp {
+        width: 100%;
     }
 
 }
